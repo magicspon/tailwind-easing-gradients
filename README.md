@@ -60,7 +60,7 @@ is the default, [see](https://github.com/larsenwork/postcss-easing-gradients/blo
 
 is the default, you could use radial, but you will need to create a compatible direction
 
-[see](https://github.com/larsenwork/postcss-easing-gradients/blob/master/README.md)
+[see](https://github.com/larsenwork/postcss-easing-gradients/blob/master/README.md) for more info
 
 ### colorStops: 15
 
