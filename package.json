@@ -6,7 +6,20 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"author": "Dave Stockley",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/magicspon/tailwind-easing-gradients"
+	},
+	"keywords": [
+		"tailwind",
+		"easing",
+		"css",
+		"gradients"
+	],
+	"bugs": {
+		"url": "https://github.com/magicspon/tailwind-easing-gradients/issues"
+	},
+	"author": "Dave Stockley <magicspon@gmail.com) (https://spon.io.com)",
 	"license": "MIT",
 	"dependencies": {
 		"chroma-js": "^2.0.2",

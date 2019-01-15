@@ -1,11 +1,6 @@
-/**
- * @author larsenwork
- *
- * The getColorStops function is taken from, https://github.com/larsenwork/postcss-easing-gradients
- */
 const easingCoordinates = require('easing-coordinates')
-const getColorStops = require('./lib/colorStops.js')
 const R = require('ramda')
+const getColorStops = require('./lib/colorStops.js')
 
 module.exports = ({
 	variants = {},
@@ -30,51 +25,54 @@ module.exports = ({
 		easing: 'ease',
 		steps: 10
 	}
-}) => ({ e, addUtilities }) => {
-	addUtilities({
-		...R.compose(
-			R.reduce((acc, [key, value]) => {
-				const output = R.is(Array, value)
-					? {
-							...defaults,
-							color: value
-					  }
-					: {
-							...defaults,
-							...value
-					  }
+} = {}) => ({ e, addUtilities }) => {
+	addUtilities(
+		{
+			...R.compose(
+				R.reduce((acc, [key, value]) => {
+					const output = R.is(Array, value)
+						? {
+								...defaults,
+								color: value
+						  }
+						: {
+								...defaults,
+								...value
+						  }
 
-				const coordinates = easingCoordinates.easingCoordinates(
-					output.easing,
-					output.steps
-				)
-				const colorStops = getColorStops(
-					output.color,
-					coordinates,
-					alphaDecimals,
-					colorMode
-				)
+					const coordinates = easingCoordinates.easingCoordinates(
+						output.easing,
+						output.steps
+					)
+					const colorStops = getColorStops(
+						output.color,
+						coordinates,
+						alphaDecimals,
+						colorMode
+					)
 
-				R.compose(
-					R.map(([dirName, dirValue]) => {
-						acc[`.${e(`.bg-easing-${dirName}-${key}`)}`] = {
-							backgroundImage: `${
-								output.type
-							}-gradient(${dirValue}, ${getColorStops(
-								output.color,
-								coordinates,
-								alphaDecimals,
-								colorMode
-							)})`
-						}
-						return acc
-					}),
-					Object.entries
-				)(directions)
+					R.compose(
+						R.map(([dirName, dirValue]) => {
+							acc[`.${e(`bg-easing-${dirName}-${key}`)}`] = {
+								backgroundImage: `${
+									output.type
+								}-gradient(${dirValue}, ${getColorStops(
+									output.color,
+									coordinates,
+									alphaDecimals,
+									colorMode
+								)})`
+							}
+							return acc
+						}),
+						Object.entries
+					)(directions)
 
-				return acc
-			}, {}),
-			Object.entries
-		)(gradients) // ?
-	})
+					return acc
+				}, {}),
+				Object.entries
+			)(gradients) // ?
+		},
+		variants
+	)
 }
