@@ -6,28 +6,27 @@ module.exports = ({
 	variants = {},
 	directions = {
 		t: 'to top',
-		tr: 'to top right',
 		r: 'to right',
-		br: 'to bottom right',
 		b: 'to bottom',
-		bl: 'to bottom left',
-		l: 'to left',
-		tl: 'to top left'
+		l: 'to left'
 	},
 	gradients = {},
 	alphaDecimals = 5,
 	colorMode = 'lrgb',
-	defaults = {
-		type: 'linear',
-		easing: 'ease',
-		steps: 10
-	}
+	type = 'linear',
+	easing = 'ease',
+	colorStops = 10
 } = {}) => ({ e, addUtilities }) => {
+	const defaults = {
+		type,
+		easing,
+		colorStops
+	}
 	addUtilities(
 		{
 			...R.compose(
 				R.reduce((acc, [key, value]) => {
-					const output = R.is(Array, value)
+					const settings = R.is(Array, value)
 						? {
 								...defaults,
 								color: value
@@ -38,11 +37,11 @@ module.exports = ({
 						  }
 
 					const coordinates = easingCoordinates.easingCoordinates(
-						output.easing,
-						output.steps
+						settings.easing,
+						settings.colorStops
 					)
 					const colorStops = getColorStops(
-						output.color,
+						settings.color,
 						coordinates,
 						alphaDecimals,
 						colorMode
@@ -52,9 +51,9 @@ module.exports = ({
 						R.map(([dirName, dirValue]) => {
 							acc[`.${e(`bg-easing-${dirName}-${key}`)}`] = {
 								backgroundImage: `${
-									output.type
+									settings.type
 								}-gradient(${dirValue}, ${getColorStops(
-									output.color,
+									settings.color,
 									coordinates,
 									alphaDecimals,
 									colorMode

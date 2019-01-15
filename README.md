@@ -20,27 +20,57 @@ npm install tailwind-easing-gradients
       variants: ['responsive'],
       // required
       gradients: {
-        'pink-blue': ['#a4e', '#03d'], // must be two colors
-        'teal-green': { type: 'radial', easing: 'ease-in-out', steps: 5, color: ['#4ae', '#0da'] },
+        'ex1': ['#a4e', '#03d'], // must be two colors
+        'ex2': { easing: 'ease-in-out', steps: 5, color: ['#4ae', '#0da'] }, // overwrite all settings
+        'ex3': {
+					easing: 'cubic-bezier(0.48, 0.3, 0.64, 1)',
+					color: ['#4ae', '#0da']
+        },
+        'ex4': {
+					easing: 'steps(4, skip-none)',
+					color: ['#4ae', '#0da']
+        }
       },
       // defaults
       alphaDecimals: 5,
       colorMode: 'lrgb',
-      defaults: {
-        type: 'linear',
-        easing: 'ease',
-        steps: 10
-      },
+      type: 'linear',
+      easing: 'ease', // default settings
+      colorStops: 10
       directions: {
         't': 'to top',
         'r': 'to right',
         'b': 'to bottom',
-        'l': 'to left',
+        'l': 'to left'
       },
     }),
   ],
 }
 ```
+
+## Options
+
+You can overwrite the easing, type, colorStops per gradient.
+
+### ease: 'ease'
+
+is the default, [see](https://github.com/larsenwork/postcss-easing-gradients/blob/master/README.md) for more examples
+
+### type: 'linear'
+
+is the default, you could use radial, but you will need to create a compatible direction
+
+[see](https://github.com/larsenwork/postcss-easing-gradients/blob/master/README.md)
+
+### colorStops: 15
+
+is the default. A lower number creates a more "low poly" gradient with less code but a higher risk of banding.
+
+### alphaDecimals: 5
+
+is the default. A lower number can result in banding.
+
+### colorMode: 'lrgb'
 
 This plugin generates the following utilities:
 
