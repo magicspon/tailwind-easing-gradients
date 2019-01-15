@@ -1,6 +1,6 @@
 {
 	"name": "tailwind-easing-gradients",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "tailwind easing gradient utilities",
 	"main": "index.js",
 	"scripts": {
