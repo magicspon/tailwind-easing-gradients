@@ -21,15 +21,9 @@ npm install tailwind-easing-gradients
       // required
       gradients: {
         'ex1': ['#a4e', '#03d'], // must be two colors
-        'ex2': { easing: 'ease-in-out', steps: 5, color: ['#4ae', '#0da'] }, // overwrite all settings
-        'ex3': {
-					easing: 'cubic-bezier(0.48, 0.3, 0.64, 1)',
-					color: ['#4ae', '#0da']
-        },
-        'ex4': {
-					easing: 'steps(4, skip-none)',
-					color: ['#4ae', '#0da']
-        }
+        'ex2': { easing: 'ease-in-out', steps: 5, color: ['#4ae', '#0da'] },
+        'ex3': { easing: 'cubic-bezier(0.48, 0.3, 0.64, 1)', color: ['#4ae', '#0da'] },
+        'ex4': { easing: 'steps(4, skip-none)', color: ['#4ae', '#0da'] }
       },
       // defaults
       alphaDecimals: 5,
