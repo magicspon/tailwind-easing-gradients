@@ -1,0 +1,16 @@
+{
+	"name": "tailwind-easing-gradients",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Dave Stockley",
+	"license": "MIT",
+	"dependencies": {
+		"chroma-js": "^2.0.2",
+		"easing-coordinates": "^2.0.2",
+		"ramda": "^0.26.1"
+	}
+}
