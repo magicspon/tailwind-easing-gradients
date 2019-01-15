@@ -1,29 +1,34 @@
 {
-	"name": "tailwind-easing-gradients",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/magicspon/tailwind-easing-gradients"
-	},
-	"keywords": [
-		"tailwind",
-		"easing",
-		"css",
-		"gradients"
-	],
-	"bugs": {
-		"url": "https://github.com/magicspon/tailwind-easing-gradients/issues"
-	},
-	"author": "Dave Stockley <magicspon@gmail.com) (https://spon.io.com)",
-	"license": "MIT",
-	"dependencies": {
-		"chroma-js": "^2.0.2",
-		"easing-coordinates": "^2.0.2",
-		"ramda": "^0.26.1"
-	}
+  "name": "tailwind-easing-gradients",
+  "version": "1.0.0",
+  "description": "## Credit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magicspon/tailwind-easing-gradients.git"
+  },
+  "keywords": [
+    "tailwind",
+    "easing",
+    "css",
+    "gradients"
+  ],
+  "bugs": {
+    "url": "https://github.com/magicspon/tailwind-easing-gradients/issues"
+  },
+  "author": "Dave Stockley (https://spon.io.com)",
+  "license": "MIT",
+  "dependencies": {
+    "chroma-js": "^2.0.2",
+    "easing-coordinates": "^2.0.2",
+    "ramda": "^0.26.1"
+  },
+  "homepage": "https://github.com/magicspon/tailwind-easing-gradients#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {}
 }

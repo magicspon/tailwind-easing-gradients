@@ -14,10 +14,7 @@ module.exports = ({
 		l: 'to left',
 		tl: 'to top left'
 	},
-	gradients = {
-		test: { type: 'linear', easing: 'ease', steps: 9, color: ['#aa4', '#ea4'] },
-		other: ['#4ae', '#ea4']
-	},
+	gradients = {},
 	alphaDecimals = 5,
 	colorMode = 'lrgb',
 	defaults = {
