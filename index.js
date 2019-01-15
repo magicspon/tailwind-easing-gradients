@@ -57,7 +57,7 @@ const magicGradients = ({
 
 				R.compose(
 					R.map(([dirName, dirValue]) => {
-						acc[`.${e(`.bg-gradient-${dirName}-${key}`)}`] = {
+						acc[`.${e(`.bg-easing-${dirName}-${key}`)}`] = {
 							backgroundImage: `${
 								output.type
 							}-gradient(${dirValue}, ${getColorStops(

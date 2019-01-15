@@ -1,4 +1,4 @@
-# # Easing Gradients Tailwind CSS Plugin
+# Easing Gradients Tailwind CSS Plugin
 
 ## Credit
 
@@ -46,7 +46,7 @@ This plugin generates the following utilities:
 
 ```css
 /* configurable with the "directions" and "gradients" options */
-.bg-gradient-[direction-name]-[gradient-name] {
+.bg-easing-[direction-name]-[gradient-name] {
 	background-image: linear-gradient(
 		[direction-value],
 		hsl([gradient-color-1]),
