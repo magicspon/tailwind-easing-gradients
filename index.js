@@ -7,7 +7,7 @@ const easingCoordinates = require('easing-coordinates')
 const getColorStops = require('./lib/colorStops.js')
 const R = require('ramda')
 
-const magicGradients = ({
+module.exports = ({
 	variants = {},
 	directions = {
 		t: 'to top',
