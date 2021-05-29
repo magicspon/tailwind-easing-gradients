@@ -30,7 +30,7 @@ npm install tailwind-easing-gradients
       colorMode: 'lrgb',
       type: 'linear',
       easing: 'ease', // default settings
-      colorStops: 10,
+      colorStops: 15,
       directions: {
         't': 'to top',
         'r': 'to right',
